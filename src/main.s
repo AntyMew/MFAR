@@ -83,6 +83,11 @@ RoomNamesAddr equ 087FF070h
 .include "src/optimization/item-check.s"
 .endif
 
+; Prerequesits for certain changes
+.if NONLINEAR || RANDOMIZER || QOL
+.notice "Applying prerequistes..."
+.endif
+
 ; Quality of life patches
 ; Patches providing non-essential but convenient features
 .if QOL
@@ -94,6 +99,7 @@ RoomNamesAddr equ 087FF070h
 .include "src/qol/fast-elevators.s"
 .include "src/qol/increase-red-x-drops.s"
 .include "src/qol/map-info.s"
+.include "src/qol/menu-edits.s"
 .include "src/qol/sax-softlock.s"
 .include "src/qol/screw-unbonk.s"
 .include "src/qol/skip-ending.s"
